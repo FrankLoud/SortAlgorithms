@@ -1,1 +1,28 @@
-/build
+.classpath
+.project
+.settings
+.DS_Store
+src/main/webapp/META-INF
+.idea
+*.iml
+.gradle
+/bin/
+out
+build
+classes
+logs
+catalina.base_IS_UNDEFINED
+bin
+target
+
+# dependencies
+/node_modules
+
+# production
+/dist
+
+# misc
+.DS_Store
+npm-debug.log*
+*.log
+${env:AppLogs}

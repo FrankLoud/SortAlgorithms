@@ -45,7 +45,7 @@ public class Bench {
 
     /** Auxiliary code, that measures performance of sorting algorithms **/
 
-    private static int[] SAMPLE_SIZES = new int[] { 10, 30, 100, 300, 1000, 3000, 10000, 30000, 100000 };
+    private static int[] SAMPLE_SIZES = new int[] { 10, 30, 100, 300, 1000, 3000, 10000, 30000 };
     private static void executionTimeReport() {
         for (int size : SAMPLE_SIZES) {
             executionTimeReport(size);
@@ -94,7 +94,8 @@ public class Bench {
 
     public static Function<int[], int[]> quickSort = new Function<int[], int[]>() {
         @Override public int[] apply(int[] array) {
-            SortAlgorithms.quickSort(array, 0, array.length-1);
+            // SortAlgorithms.quickSort(array, 0, array.length-1);
+            SortAlgorithms.quickSortByStack(array);
             return array;
         }
     };
@@ -210,24 +211,24 @@ public class Bench {
             "=================================================================\n" +
             "| Algorithm      | %14s | %14s | %14s |\n" +
             "| %3s            | %14s | %14s | %14s |\n" +
-            "| Insertion sort | %14s | %14s | %14s |\n" +
-            "| Shell sort     | %14s | %14s | %14s |\n" +
+            // "| Insertion sort | %14s | %14s | %14s |\n" +
+            // "| Shell sort     | %14s | %14s | %14s |\n" +
             "| Selection sort | %14s | %14s | %14s |\n" +
             "| Heap sort      | %14s | %14s | %14s |\n" +
-            "| Bubble sort    | %14s | %14s | %14s |\n" +
+            // "| Bubble sort    | %14s | %14s | %14s |\n" +
             "| Quicksort      | %14s | %14s | %14s |\n" +
-            "| Merge sort     | %14s | %14s | %14s |\n" +
+            // "| Merge sort     | %14s | %14s | %14s |\n" +
             "| Radix sort     | %14s | %14s | %14s |\n",
             size,
             "Random", "95% sorted", "Sorted",
             ":--", "---:", "---:", "---:",
-            execute(insertionSort, randomSample),
-            execute(insertionSort, partiallySortedSample),
-            execute(insertionSort, sortedSample),
+            // execute(insertionSort, randomSample),
+            // execute(insertionSort, partiallySortedSample),
+            // execute(insertionSort, sortedSample),
 
-            execute(shellSort,  randomSample),
-            execute(shellSort,  partiallySortedSample),
-            execute(shellSort,  sortedSample),
+            // execute(shellSort,  randomSample),
+            // execute(shellSort,  partiallySortedSample),
+            // execute(shellSort,  sortedSample),
 
             execute(selectionSort,  randomSample),
             execute(selectionSort,  partiallySortedSample),
@@ -237,17 +238,17 @@ public class Bench {
             execute(heapSort,  partiallySortedSample),
             execute(heapSort,  sortedSample),
 
-            execute(bubbleSort,  randomSample),
-            execute(bubbleSort,  partiallySortedSample),
-            execute(bubbleSort,  sortedSample),
+            // execute(bubbleSort,  randomSample),
+            // execute(bubbleSort,  partiallySortedSample),
+            // execute(bubbleSort,  sortedSample),
 
             execute(quickSort,  randomSample),
             execute(quickSort,  partiallySortedSample),
             execute(quickSort,  sortedSample),
 
-            execute(mergeSort,  randomSample),
-            execute(mergeSort,  partiallySortedSample),
-            execute(mergeSort,  sortedSample),
+            // execute(mergeSort,  randomSample),
+            // execute(mergeSort,  partiallySortedSample),
+            // execute(mergeSort,  sortedSample),
 
             execute(radixSort,  randomSample),
             execute(radixSort,  partiallySortedSample),
